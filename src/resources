@@ -1,0 +1,6 @@
+name: PartyUndFreunde
+version: ${project.version}
+author: SoonMite
+main: de.SoonMitte.partyandfriends.main.Main
+description: PartyUndFreunde für das GeneTv.net Netzwerk
+softDepends: ['RedisBungee']
