@@ -1,4 +1,4 @@
-package de.simonsator.partyandfriends.api.pafplayers;
+package de.SoonMitte.partyandfriends.api.pafplayers;
 
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.protocol.packet.Chat;
