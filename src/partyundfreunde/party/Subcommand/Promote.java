@@ -13,19 +13,19 @@ import static de.SoonMitte.partyandfriends.main.Main.getPlayerManager;
 import static de.SoonMitte.partyandfriends.utilities.PatterCollection.NEW_LEADER_PATTERN;
 
 /**
- * The class which will be executed on /party leader
+ * The class which will be executed on /party promote
  *
  * @author SoonMitte
  * @version 1.0.0
  */
-public class Leader extends LeaderNeededCommand {
+public class promote extends LeaderNeededCommand {
 
-	public Leader(String[] pCommands, int pPriority, String pHelpText) {
+	public promote(String[] pCommands, int pPriority, String pHelpText) {
 		super(pCommands, pPriority, pHelpText);
 	}
 
 	/**
-	 * Will be executed on /party leader
+	 * Will be executed on /party promote 
 	 *
 	 * @param pPlayer The player
 	 * @param args    The arguments
@@ -44,7 +44,7 @@ public class Leader extends LeaderNeededCommand {
 				new TextComponent(
 						Main.getInstance().getPartyPrefix() + NEW_LEADER_PATTERN
 								.matcher(Main.getInstance().getMessagesYml()
-										.getString("Party.Command.Leader.NewLeaderIs"))
+										.getString("Party.Command.promote.NewLeaderIs"))
 								.replaceAll(Matcher.quoteReplacement(player.getDisplayName()))));
 	}
 }
