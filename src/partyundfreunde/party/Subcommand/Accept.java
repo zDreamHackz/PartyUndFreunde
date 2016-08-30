@@ -14,19 +14,19 @@ import static de.SoonMitte.partyandfriends.main.Main.getPlayerManager;
 import static de.SoonMitte.partyandfriends.utilities.PatterCollection.PLAYER_PATTERN;
 
 /**
- * The class which will be executed on /party join
+ * The class which will be executed on /party accept
  *
  * @author SoonMitte
  * @version 1.0.0
  */
-public class Join extends PartySubCommand {
+public class Accept extends PartySubCommand {
 
-	public Join(String[] pCommands, int pPriority, String pHelpText) {
+	public Accept(String[] pCommands, int pPriority, String pHelpText) {
 		super(pCommands, pPriority, pHelpText);
 	}
 
 	/**
-	 * Will be executed on /party join
+	 * Will be executed on /party accept
 	 *
 	 * @param pPlayer The player
 	 * @param args    The arguments
@@ -40,7 +40,7 @@ public class Join extends PartySubCommand {
 		PAFPlayer pl = getPlayerManager().getPlayer(args[0]);
 		if (!pl.isOnline()) {
 			pPlayer.sendMessage(new TextComponent(Main.getInstance().getPartyPrefix()
-					+ Main.getInstance().getMessagesYml().getString("Party.Command.Join.PlayerHasNoParty")));
+					+ Main.getInstance().getMessagesYml().getString("Party.Command.Accept.PlayerHasNoParty")));
 			return;
 		}
 		OnlinePAFPlayer onlinePAFPlayer = (OnlinePAFPlayer) pl;
@@ -52,11 +52,11 @@ public class Join extends PartySubCommand {
 					new TextComponent(
 							Main.getInstance().getPartyPrefix() + PLAYER_PATTERN
 									.matcher(Main.getInstance().getMessagesYml()
-											.getString("Party.Command.Join.PlayerHasJoined"))
+											.getString("Party.Command.Accept.PlayerHasJoined"))
 									.replaceAll(Matcher.quoteReplacement(pPlayer.getDisplayName()))));
 		else
 			pPlayer.sendMessage(new TextComponent(Main.getInstance().getPartyPrefix()
-					+ Main.getInstance().getMessagesYml().getString("Party.Command.Join.ErrorNoInvitation")));
+					+ Main.getInstance().getMessagesYml().getString("Party.Command.Accept.ErrorNoInvitation")));
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class Join extends PartySubCommand {
 	private boolean hasNoParty(OnlinePAFPlayer pPlayer, PlayerParty pParty) {
 		if (pParty == null) {
 			pPlayer.sendMessage(new TextComponent(Main.getInstance().getPartyPrefix()
-					+ Main.getInstance().getMessagesYml().getString("Party.Command.Join.PlayerHasNoParty")));
+					+ Main.getInstance().getMessagesYml().getString("Party.Command.Accept.PlayerHasNoParty")));
 			return true;
 		}
 		return false;
@@ -76,7 +76,7 @@ public class Join extends PartySubCommand {
 	private boolean isInParty(OnlinePAFPlayer pPlayer) {
 		if (Main.getPartyManager().getParty(pPlayer) != null) {
 			pPlayer.sendMessage(new TextComponent(Main.getInstance().getPartyPrefix()
-					+ Main.getInstance().getMessagesYml().getString("Party.Command.Join.AlreadyInAPartyError")));
+					+ Main.getInstance().getMessagesYml().getString("Party.Command.Accept.AlreadyInAPartyError")));
 			return true;
 		}
 		return false;
