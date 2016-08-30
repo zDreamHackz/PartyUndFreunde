@@ -47,14 +47,14 @@ public class PartyCommand extends TopCommand<PartySubCommand> {
 				Main.getInstance().getConfig().getStringList("CommandNames.Party.Leave").toArray(new String[0]), 5,
 				Main.getInstance().getMessagesYml().getString("Party.CommandUsage.Leave")));
 		if (!Main.getInstance().getConfig().getString("General.DisableCommand.Party.Chat").equalsIgnoreCase("true")) {
-			subCommands.add(new Chat(
-					Main.getInstance().getConfig().getStringList("CommandNames.Party.Chat").toArray(new String[0]), 4,
-					Main.getInstance().getMessagesYml().getString("Party.CommandUsage.Chat")));
+			subCommands.add(new p(
+					Main.getInstance().getConfig().getStringList("CommandNames.Party.p").toArray(new String[0]), 4,
+					Main.getInstance().getMessagesYml().getString("Party.CommandUsage.p")));
 		}
 		if (!Main.getInstance().getConfig().getString("General.DisableCommand.Party.Leader").equalsIgnoreCase("true")) {
-			subCommands.add(new Leader(
-					Main.getInstance().getConfig().getStringList("CommandNames.Party.Leader").toArray(new String[0]), 7,
-					Main.getInstance().getMessagesYml().getString("Party.CommandUsage.Leader")));
+			subCommands.add(new promote(
+					Main.getInstance().getConfig().getStringList("CommandNames.Party.promote").toArray(new String[0]), 7,
+					Main.getInstance().getMessagesYml().getString("Party.CommandUsage.promote")));
 		}
 	}
 
