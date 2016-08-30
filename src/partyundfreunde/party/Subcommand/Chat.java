@@ -6,14 +6,14 @@ import de.SoonMitte.partyandfriends.main.Main;
 import de.SoonMitte.partyandfriends.api.pafplayers.OnlinePAFPlayer;
 
 /**
- * The /party chat command
+ * The /p command
  *
  * @author SoonMitte
  * @version 1.0.0
  */
-public class Chat extends PartySubCommand {
+public class p extends PartySubCommand {
 
-	public Chat(String[] pCommands, int pPriority, String pHelpText) {
+	public p(String[] pCommands, int pPriority, String pHelpText) {
 		super(pCommands, pPriority, pHelpText);
 	}
 
